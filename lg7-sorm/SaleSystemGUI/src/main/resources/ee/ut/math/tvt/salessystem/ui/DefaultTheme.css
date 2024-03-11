@@ -1,0 +1,314 @@
+.root{
+    background_color: #031927;
+    text_color: white;
+    control_color_selection: #458AAC; /* light, used for selected */
+    control_color_hover: #2F6F93; /* darker, used for hightlighted/focused elements */
+    control_color_field: #09344C; /* quite dark, used for text fields and buttons */
+    control_color_disabled: #2C2D2D; /* used for disabled elements */
+
+    -fx-background-color: background_color;
+}
+ 
+.background{
+    -fx-background-color: background_color;
+}
+
+.sub_background{
+	 -fx-background-color: background_color;
+}
+ 
+
+.header{
+    -fx-font-size: 42pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: text_color;
+}
+ 
+.item-title{
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: text_color;
+    -fx-opacity: 0.6;
+} 
+
+.background_style {
+	  -fx-background-color: background_color;
+}
+
+.background_fills{
+	-fx-background-color: #000000, #111111, #000000, #111111;
+}
+
+.label{
+	-fx-text-fill: text_color
+}
+
+.text-field {
+	-fx-background-color: control_color_field;
+	-fx-background-radius: 0;
+	-fx-text-fill: text_color
+}
+
+.text-field:focused{
+	-fx-background-color: control_color_hover;
+}
+
+.text-field:disabled {
+    -fx-background-color: control_color_disabled;
+}
+
+/*
+ * BorderPane
+ */
+ 
+ .border-pane .background_style{
+	 -fx-background-color: background_color;
+}
+
+/*
+ * SplitPane
+ */
+ 
+
+.split-pane .split-pane-divider  {
+    -fx-background-color: control_color_selection;
+   -fx-border-color: background_color;
+   -fx-background-insets: 0;
+   -fx-pref-width: 5px;
+}
+
+/*.split-pane > * {*/
+/*    -fx-border-style: solid;*/
+/*    -fx-border-color: control_color_selection;*/
+/*    -fx-border-width: 2px;*/
+/*}*/
+
+/*.split-pane {*/
+/*    -fx-border-style: solid;*/
+/*    -fx-border-color: control_color_selection;*/
+/*    -fx-border-width: 2px;*/
+/*}*/
+
+
+/*
+ * TableView
+ */
+ 
+ .table-view {
+    -fx-control-inner-background: control_color_field;
+    -fx-background-color: background_color;
+    -fx-table-cell-border-color: control_color_field;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 0;
+}
+
+ .table-row-cell .table-cell { 
+ 	-fx-border-width: 0px;
+ }
+
+.table-view .column-header-background {
+    -fx-background-color: control_color_field;
+}
+
+.table-row-cell:empty { 
+	-fx-background-color: background_color;
+}
+
+.table-row-cell:selected { 
+	-fx-background-color: control_color_selection;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 30;
+    -fx-border-width: 0 2 2 0;
+    -fx-background-color: transparent;
+    -fx-border-color: background_color;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: text_color;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: control_color_selection;
+}
+
+.table-view .placeholder {
+	-fx-background-color: background_color;
+}
+
+.table-row-cell .text {
+       -fx-fill: text_color;
+}
+
+/*
+ * 
+ * TabPane
+ */
+ 
+ .tab-pane > .tab-header-area > .headers-region > .tab:selected:top { 
+    -fx-background-color: control_color_selection;
+}  
+
+ .tab-pane > .tab-header-area > .headers-region > .tab:hover:top { 
+    -fx-background-color: control_color_hover;
+}  
+
+ .tab-pane > .tab-header-area > .headers-region > .tab:top { 
+    -fx-background-color: control_color_field;
+}  
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {  
+    -fx-alignment: CENTER;  
+    -fx-text-fill: text_color;
+    -fx-font-weight: bold;  
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {  
+    -fx-alignment: CENTER;  
+    -fx-text-fill: text_color;
+    -fx-font-weight: bold;  
+}   
+ 
+ .tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 1;
+    -fx-background-color: background_color;
+}
+
+.tab-pane{
+    -fx-tab-min-width:50px;
+    -fx-background-color: background_color;
+    -fx-text-fill: text_color;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+    -fx-background-color: #fff;
+    -fx-color: control_color_selection;
+    -fx-text-fill: text_color;
+}
+
+.tab-pane .tab
+{
+    -fx-background-color: control_color_selection;
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: background_color;
+}
+
+.tab-pane .tab:hover
+{
+    -fx-background-color: background_color;
+}
+
+/*******
+ *  titled pane
+ */
+ 
+.titled-pane {
+    -fx-background-color: background_color;
+    -fx-text-fill: text_color;
+}
+.titled-pane:focused {
+    -fx-text-fill: text_color;
+}
+.titled-pane > .title {
+    -fx-background-color: control_color_selection;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+
+.titled-pane:focused > .title {
+    -fx-color: -fx-focus-color;
+}
+
+.titled-pane .content
+{
+    -fx-border-style: solid;
+    -fx-border-color: control_color_selection;
+    -fx-border-width: 1px;
+}
+ 
+/*******************************************************************************
+ *                                                                             *
+ * Push Button                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+ 
+.button {
+    -fx-padding: 5 22 5 22;
+
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+ 
+    -fx-background-color: control_color_field;
+   
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: text_color;
+}
+ 
+.button:hover, .button:focused{
+    -fx-background-color: control_color_hover;
+}
+
+.button:disabled, .button:default:disabled
+{
+    -fx-opacity: 0.4;
+    -fx-background-color: control_color_disabled;
+    -fx-text-fill: white;
+}
+
+.choice-box {
+    -fx-background-color: control_color_field;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+.choice-box:hover, .choice-box:focused{
+    -fx-background-color: control_color_hover;
+}
+
+.choice-box:disabled {
+    -fx-background-color: control_color_disabled;
+}
+
+.context-menu {
+    -fx-background-color: control_color_field;
+}
+
+.date-picker {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: control_color_selection;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .text-field {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button > .arrow {
+    -fx-background-color: white;
+}
+
+.date-picker-popup {
+    -fx-padding: 0;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: background_color;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner > .button > .left-arrow,
+.date-picker-popup > * > .spinner > .button > .right-arrow {
+    -fx-background-color: white;
+}

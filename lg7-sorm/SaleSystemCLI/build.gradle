@@ -1,0 +1,50 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'ee.ut.math.tvt.salessystem.ui.ConsoleUI'
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+version = '1.0'
+
+// Set sourceCompatibility and targetCompatibility to Java 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+dependencies {
+    implementation project(':')
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'org.mockito', name: 'mockito-core', version: '5.6.0'
+}
+
+jar {
+    doFirst {
+        manifest {
+            if (!configurations.runtimeClasspath.isEmpty()) {
+                attributes('Class-Path':
+                        configurations.runtimeClasspath.collect{it.toURI().toString()}.join(' '))
+            }
+        }
+    }
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                'Implementation-Version': version,
+                'Main-Class': mainClassName
+    }
+}
+
+run {
+    standardInput = System.in
+}
+test {
+    useJUnitPlatform()
+}
